@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
     <!-- =========================================================
         tailwind and daisy ui link part start
     =========================================================== -->
-    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- =========================================================
         tailwind and daisy ui link part end
     =========================================================== -->
@@ -17,74 +19,146 @@
     <!-- =========================================================
         Goolgle font link part start
     =========================================================== -->
-    
+
     <!-- =========================================================
         Goolgle font link part end
     =========================================================== -->
 </head>
+
 <body>
-<header>
+    <header>
     <!-- =======================================
         navbar part start
     ========================================= -->
-    <h1>hellow</h1>
-    <h1>bangladesh</h1>
+        <div class="container mx-auto">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Destination</a></li>
+                      <li><a href="#">Search</a></li>
+                    </ul>
+                  </div>
+                  <a class="text-3xl font-bold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Destination</a></li>
+                      <li><a href="#">Search</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn bg-[#1DD1001A] text-[#1DD100] border-2 border-green-300">Bus<img src="./images/nvbar-button-icon.png" alt=""></a>
+                </div>
+              </div>
+        </div>
     <!-- =======================================
         navbar part end
     ========================================= -->
 
 
-    <!-- =======================================
+        <!-- =======================================
         banner part start
     ========================================= -->
-
+        <div class="container mx-auto">
+            <div class="h-[600px] bg-[url(./images/banner-bus.png)] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center rounded-xl">
+               <div class="text-center text-white space-y-3">
+                <h1 class="text-6xl font-bold">End-to-End Travel with
+                    <br>
+                <span class="text-[#1DD100]">P Paribahan</span></h1>
+                <p class="text-sm opacity-70 text-center w-3/5 mx-auto">
+                Traveling can be exciting, but it can also be stressful, 
+                especially when you have to deal with multiple bookings, transfers,</p>
+                <div class="flex justify-center">
+                    <button class="text-base font-semibold bg-[#1DD100] px-4 py-2 rounded-lg text-black">Buy Tickets</button>
+                </div>
+               </div>
+            </div> 
+            <!-- banner register -->
+            <div class="w-3/4 py-4 mx-auto flex justify-center gap-3  -translate-y-10">
+                <!-- card one -->
+                <div class="w-1/4 p-3 flex gap-3 items-center border-b-2 rounded-xl border-green-400 bg-slate-50">
+                    <img src="./images/banner-registed.png" alt="">
+                    <div>
+                    <h4 class="text-3xl font-bold">500K+</h4> 
+                    <p>Registered users</p>
+                </div>
+                </div>
+                <!-- card two -->
+                <div class="w-1/4 p-3 flex gap-3 items-center border-b-2 rounded-xl border-green-400 bg-slate-50">
+                    <img src="./images/banner-registed.png" alt="">
+                    <div>
+                    <h4 class="text-3xl font-bold">500K+</h4> 
+                    <p>Registered users</p>
+                </div>
+                </div>
+                <!-- card three -->
+                <div class="w-1/4 p-3 flex gap-3 items-center border-b-2 rounded-xl border-green-400 bg-slate-50">
+                    <img src="./images/banner-registed.png" alt="">
+                    <div>
+                    <h4 class="text-3xl font-bold">500K+</h4> 
+                    <p>Registered users</p>
+                </div>
+                </div>
+            </div>
+        </div>
     <!-- =======================================
         banner part end
     ========================================= -->
-</header>
+    </header>
 
 
-<main>
-    <!-- =======================================
+    <main>
+        <!-- =======================================
         Best offers part start
     ========================================= -->
+        <div class="container mx-auto mt-5">
 
-    <!-- =======================================
+        </div>
+        <!-- =======================================
         Best offers part end
     ========================================= -->
 
 
 
 
-    <!-- =======================================
+        <!-- =======================================
         P.H Paribahan part start
     ========================================= -->
 
-    <!-- =======================================
+        <!-- =======================================
         P.H Paribahan part end
     ========================================= -->
 
 
 
 
-    <!-- =======================================
+        <!-- =======================================
         Select  Seat start
     ========================================= -->
 
-    <!-- =======================================
+        <!-- =======================================
         Select  Seat  end
     ========================================= -->
-</main>
+    </main>
 
-<footer>
-    <!-- =======================================
+    <footer>
+        <!-- =======================================
         footer part start
     ========================================= -->
 
-    <!-- =======================================
+        <!-- =======================================
         footer part end
     ========================================= -->
-</footer>
+    </footer>
     <script src="./scripts/javascript.js"></script>
 </body>
+
 </html>
