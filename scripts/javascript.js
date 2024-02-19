@@ -4,8 +4,7 @@ let count = 0;
 let selectTicketCount = 0;
 for (const singleTicket of tickets) {
     singleTicket.addEventListener('click', function () {
-        singleTicket.style.backgroundColor = 'green';
-        singleTicket.style.color = 'white';
+        
 
 
 
@@ -38,7 +37,8 @@ for (const singleTicket of tickets) {
             alert('Your requirement ticket maximum count 4')
             return;
         }
-
+        singleTicket.style.backgroundColor = 'green';
+        singleTicket.style.color = 'white';
 
 
         // ------append ticket part start--------------------//

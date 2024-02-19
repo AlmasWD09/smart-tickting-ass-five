@@ -18,17 +18,24 @@
 
 
     <!-- =========================================================
-        Goolgle font link part start
+        google font part start
     =========================================================== -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- =========================================================
-        Goolgle font link part end
+        google font part end
     =========================================================== -->
+    <style>
+        .raleway-font{
+            font-family: "Raleway",
+        }
+    </style>
 </head>
 
-<body>
+<body class="raleway-font">
     <header>
-        <!-- =======================================
+    <!-- =======================================
         navbar part start
     ========================================= -->
         <div class="container mx-auto px-8 md:px-24">
@@ -61,17 +68,17 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn bg-[#1cd10065] text-[#1DD100] border-2 border-green-300">Bus<img
+                    <a class="btn bg-green-100 text-[#1DD100] border-2 border-green-300">Bus<img
                             src="./images/nvbar-button-icon.png" alt=""></a>
                 </div>
             </div>
         </div>
-        <!-- =======================================
+     <!-- =======================================
         navbar part end
     ========================================= -->
 
 
-        <!-- =======================================
+    <!-- =======================================
         banner part start
     ========================================= -->
 
@@ -81,13 +88,13 @@
                 <div class="text-center text-white lg:space-y-3">
                     <h1 class="text-xl lg:text-6xl font-bold">End-to-End Travel with
                         <br>
-                        <span class="text-[#1DD100]">P Paribahan</span>
+                        <span class="text-green-400">P Paribahan</span>
                     </h1>
                     <p class="text-sm opacity-70 text-center lg:w-3/5 mx-auto">
                         Traveling can be exciting, but it can also be stressful,
                         especially when you have to deal with multiple bookings, transfers,</p>
                     <div class="flex justify-center">
-                        <button class="text-base font-semibold bg-[#1DD100] px-4 py-2 rounded-lg text-black"><a
+                        <button class="text-base font-semibold bg-green-400 px-4 py-2 rounded-lg text-black"><a
                                 href="#ph-poribahan">Buy Tickets</a></button>
                     </div>
                 </div>
@@ -120,14 +127,14 @@
                 </div>
             </div>
         </div>
-        <!-- =======================================
+    <!-- =======================================
         banner part end
     ========================================= -->
     </header>
 
 
     <main>
-        <!-- =======================================
+    <!-- =======================================
         Best offers part start
     ========================================= -->
         <div class="container mx-auto px-8 md:px-24  my-3 lg:my-0 lg:pb-3">
@@ -165,14 +172,14 @@
                     Offers</button>
             </div>
         </div>
-        <!-- =======================================
+    <!-- =======================================
         Best offers part end
     ========================================= -->
 
 
 
 
-        <!-- =======================================
+    <!-- =======================================
         P.H Paribahan part start
     ========================================= -->
         <div id="ph-poribahan" class="container mx-auto px-8 md:px-24 mt-4">
@@ -230,14 +237,14 @@
                 </div>
             </div>
         </div>
-        <!-- =======================================
+    <!-- =======================================
         P.H Paribahan part end
     ========================================= -->
 
 
 
 
-        <!-- =======================================
+    <!-- =======================================
         Select  Seat start
     ========================================= -->
         <div class="container mx-auto px-8 lg:px-24 ">
@@ -252,7 +259,7 @@
                         </div>
                         <div class="flex gap-1">
                             <img src="./images/selecte.png" alt="">
-                            <p class="text-[#34bc00] font-bold">Selected</p>
+                            <p class="text-green-400 font-bold">Selected</p>
                         </div>
                     </div>
                     <div class="flex justify-end my-3">
@@ -338,8 +345,6 @@
                     <div id="ticketName-add">
 
                     </div>
-
-
                     <div class="flex justify-between">
                         <h2 class="font-bold">Total Price</h2>
                         <h2 class="font-bold">BDT <span id="total-price">0</span></h2>
@@ -361,14 +366,12 @@
                     <label for="">Passenger Name*</label>
                     <input class="w-full px-2 py-4 my-2 outline-none border border-gray-200 rounded-lg" type="text"
                         name="" id="" placeholder="Enter your name">
-
                     <label for="">Phone Number*</label>
                     <input class="w-full px-2 py-4 my-2 outline-none border border-gray-200 rounded-lg " type="number"
                         name="" id="phone-number" placeholder="Enter your phone number">
                     <label for="">Email ID</label>
                     <input class="w-full px-2 py-4 my-2 outline-none border border-gray-200 rounded-lg" type="text"
                         name="" id="" placeholder="Enter your email id">
-
 
                         <!-- modal part start -->
                         <button disabled id="next-btn" class="w-full px-2 py-4 my-2 rounded-lg bg-green-200 font-bold text-white" onclick="my_modal_5.showModal()">Next</button>
@@ -392,8 +395,6 @@
                             </div>
                         </dialog>
                         <!-- modal part end -->
-
-
                     <div class="flex justify-between">
                         <h4 class="underline opacity-70 underline-offset-4">Terms and Conditions</h4>
                         <h4 class="underline opacity-70 underline-offset-4">Cancellation Policy</h4>
@@ -402,7 +403,7 @@
 
             </div>
         </div>
-        <!-- =======================================
+    <!-- =======================================
         Select  Seat  end
     ========================================= -->
     </main>
@@ -441,11 +442,10 @@
                 </div>
             </div>
         </div>
-        <!-- =======================================
+    <!-- =======================================
         footer part end
     ========================================= -->
     </footer>
     <script src="./scripts/javascript.js"></script>
 </body>
-
 </html>
