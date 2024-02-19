@@ -26,18 +26,19 @@ for (const singleTicket of tickets) {
         grandTotal('grand-total-price', singleTickePrice);
 
 
-
+        // ticket selected condition-----------
         const seatCount = inntextSelectAndNumberConvert('seat-count')
-        if(seatCount == 4){
-            const applyButton = document.getElementById('apply-btn');
-            applyButton.removeAttribute('disable');
-            applyButton.classList.add('bg-green-400')
+        if (seatCount == 4) {
+            const applyBtn = document.getElementById('apply-btn');
+            applyBtn.removeAttribute('disabled');
+            applyBtn.classList.add('bg-green-400')
+
         }
-        else if(seatCount > 4){
-            alert('dddddddddd')
+        else if (seatCount > 4) {
+            alert('Your requirement ticket maximum count 4')
             return;
         }
-        
+
 
 
         // ------append ticket part start--------------------//
@@ -60,32 +61,57 @@ for (const singleTicket of tickets) {
 
 // ----------cuppon code part start----------//
 
-
-
-
-
-
 const applyBtn = document.getElementById('apply-btn').addEventListener('click', function () {
     const cuponCode = document.getElementById('copupon-code');
     const cuponCodeValue = cuponCode.value;
     const convertCuponCodeValue = cuponCodeValue.split('').join('').toUpperCase();
-    console.log(convertCuponCodeValue);
 
     if (cuponCodeValue === 'NEW 15') {
         let discountTotal = inntextSelectAndNumberConvert('grand-total-price');
         const discountPrice = discountTotal * 20 / 100;
         discountTotal = discountTotal - discountPrice
         document.getElementById('grand-total-price').innerText = discountTotal
+
+        const updatePriceNameSet = document.getElementById('update-grand');
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <div class = 'flex justify-between'>
+            <p>Update price</p>
+            <p>330</p>
+            </div>
+            `
+        updatePriceNameSet.appendChild(div);
+        const hiddenAdd = document.getElementById('hidden-add');
+        hiddenAdd.classList.add('hidden')
     }
     else if (cuponCodeValue === 'Couple 20') {
         let discountTotal = inntextSelectAndNumberConvert('grand-total-price');
         const discountPrice = discountTotal * 20 / 100;
         discountTotal = discountTotal - discountPrice
         document.getElementById('grand-total-price').innerText = discountTotal
+
+        const updatePriceNameSet = document.getElementById('update-grand');
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <div class = 'flex justify-between'>
+            <p>Update price</p>
+            <p>440</p>
+            </div>
+            `
+        updatePriceNameSet.appendChild(div);
+        const hiddenAdd = document.getElementById('hidden-add');
+        hiddenAdd.classList.add('hidden')
     }
     else {
         alert('invalid cupon')
     }
+
+    // --------- update grand name and price -------------------------
+
+
+
+
+
 })
 // ----------cuppon code part end----------//
 
