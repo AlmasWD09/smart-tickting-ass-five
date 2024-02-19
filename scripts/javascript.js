@@ -1,55 +1,135 @@
-// function searchPrtbohan(){
-//     const phPoribahan = document.getElementById('ph-poribahan');
-// }
 
 const tickets = document.getElementsByClassName('ticket');
 let count = 0;
-let seatLeft = 0
+let selectTicketCount = 0;
 for (const singleTicket of tickets) {
-    singleTicket.addEventListener('click', function(){
+    singleTicket.addEventListener('click', function () {
+        singleTicket.style.backgroundColor = 'green';
+        singleTicket.style.color = 'white';
+
+
+
+        // ----------- counting part start -----------------
         count = count + 1;
-        ticketCollection('seat-count',count);
+        ticketCollection('seat-count', count);
+        const seatLeft = document.getElementById('seat-left').innerText;
+        const convertSeatLeft = parseInt(seatLeft)
+        document.getElementById('seat-left').innerText = convertSeatLeft - 1;
+        // ----------- counting part end --------------------
 
-        // ------second step --------------
+
+        //------- function call and id pass --------------
         const singleTicketValue = singleTicket.innerText;
-       console.log(singleTicketValue);
-
-        // -------- Function use ------------
         const singleTickePrice = inntextSelectAndNumberConvert('single-ticket-price');
         const totalPrice = inntextSelectAndNumberConvert('total-price');
-        // console.log(singleTickePrice, totalPrice);
-        sumPrice('total-price',singleTickePrice)
-          
+        sumPrice('total-price', singleTickePrice);
+        grandTotal('grand-total-price', singleTickePrice);
 
+
+
+        const seatCount = inntextSelectAndNumberConvert('seat-count')
+        if(seatCount == 4){
+            const applyButton = document.getElementById('apply-btn');
+            applyButton.removeAttribute('disable');
+            applyButton.classList.add('bg-green-400')
+        }
+        else if(seatCount > 4){
+            alert('dddddddddd')
+            return;
+        }
+        
+
+
+        // ------append ticket part start--------------------//
         const ticketNameAdd = document.getElementById('ticketName-add');
         const div = document.createElement('div');
-        const p = document.createElement('p');
-        p.innerText = singleTicketValue;
-        const p2 = document.createElement('p');
-        p2.innerText = 'Economoy';
-        const p3 = document.createElement('p');
-        p3.innerText = singleTickePrice;
-        div.appendChild(p);
-        div.appendChild(p2);
-        div.appendChild(p3);
+        div.innerHTML = `
+        <div class = 'flex justify-between'>
+        <p>${singleTicketValue}</p>
+        <p>Economoy</p>
+        <p>${singleTickePrice}</p>
+        </div>
+        `
         ticketNameAdd.appendChild(div)
-
     })
 }
 
-function sumPrice(elementId,value){
+
+
+
+
+// ----------cuppon code part start----------//
+
+
+
+
+
+
+const applyBtn = document.getElementById('apply-btn').addEventListener('click', function () {
+    const cuponCode = document.getElementById('copupon-code');
+    const cuponCodeValue = cuponCode.value;
+    const convertCuponCodeValue = cuponCodeValue.split('').join('').toUpperCase();
+    console.log(convertCuponCodeValue);
+
+    if (cuponCodeValue === 'NEW 15') {
+        let discountTotal = inntextSelectAndNumberConvert('grand-total-price');
+        const discountPrice = discountTotal * 20 / 100;
+        discountTotal = discountTotal - discountPrice
+        document.getElementById('grand-total-price').innerText = discountTotal
+    }
+    else if (cuponCodeValue === 'Couple 20') {
+        let discountTotal = inntextSelectAndNumberConvert('grand-total-price');
+        const discountPrice = discountTotal * 20 / 100;
+        discountTotal = discountTotal - discountPrice
+        document.getElementById('grand-total-price').innerText = discountTotal
+    }
+    else {
+        alert('invalid cupon')
+    }
+})
+// ----------cuppon code part end----------//
+
+
+
+
+const nextBtn = document.getElementById('next-btn');
+const phoneNumber = document.getElementById('phone-number').addEventListener('keyup', function (event) {
+    const element = event.target.value;
+    if (element.length > 10) {
+        nextBtn.removeAttribute('disabled');
+        nextBtn.classList.add('bg-green-400');
+    }
+    else {
+        nextBtn.setAttribute('disabled', true);
+        nextBtn.classList.add('bg-green-200');
+    }
+});
+
+
+
+
+
+
+function sumPrice(elementId, value) {
     const totalAmount = document.getElementById('total-price').innerText;
     const convertTotalAmount = parseInt(totalAmount);
     const sum = convertTotalAmount + value;
-    ticketCollection(elementId,sum)
+    ticketCollection(elementId, sum)
 }
 
-function inntextSelectAndNumberConvert(elementId){
+function grandTotal(elementId, value) {
+    const totalAmount = document.getElementById('grand-total-price').innerText;
+    const convertTotalAmount = parseInt(totalAmount);
+    const sum = convertTotalAmount + value;
+    ticketCollection(elementId, sum)
+}
+
+function inntextSelectAndNumberConvert(elementId) {
     const element = document.getElementById(elementId).innerText;
     const convertNumber = parseInt(element);
     return convertNumber;
 }
 
-function ticketCollection(elementId,value){
+function ticketCollection(elementId, value) {
     const ticket = document.getElementById(elementId).innerText = value;
 }
