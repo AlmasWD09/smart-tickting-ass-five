@@ -64,7 +64,7 @@ const applyBtn = document.getElementById('apply-btn').addEventListener('click', 
 
     if (cuponCodeValue === 'NEW 15') {
         let discountTotal = inntextSelectAndNumberConvert('grand-total-price');
-        const discountPrice = discountTotal * 20 / 100;
+        const discountPrice = discountTotal * 15 / 100;
         discountTotal = discountTotal - discountPrice
         document.getElementById('grand-total-price').innerText = discountTotal
 
@@ -72,7 +72,7 @@ const applyBtn = document.getElementById('apply-btn').addEventListener('click', 
         const div = document.createElement('div');
         div.innerHTML = `
             <div class = 'flex justify-between'>
-            <p>Update price</p>
+            <p>discount grand total</p>
             <p>330</p>
             </div>
             `
@@ -90,7 +90,7 @@ const applyBtn = document.getElementById('apply-btn').addEventListener('click', 
         const div = document.createElement('div');
         div.innerHTML = `
             <div class = 'flex justify-between'>
-            <p>Update price</p>
+            <p>discount grand total</p>
             <p>440</p>
             </div>
             `
