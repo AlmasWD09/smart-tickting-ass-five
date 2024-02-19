@@ -4,9 +4,6 @@ let count = 0;
 let selectTicketCount = 0;
 for (const singleTicket of tickets) {
     singleTicket.addEventListener('click', function () {
-        
-
-
 
         // ----------- counting part start -----------------
         count = count + 1;
@@ -31,7 +28,6 @@ for (const singleTicket of tickets) {
             const applyBtn = document.getElementById('apply-btn');
             applyBtn.removeAttribute('disabled');
             applyBtn.classList.add('bg-green-400')
-
         }
         else if (seatCount > 4) {
             alert('Your requirement ticket maximum count 4')
@@ -105,19 +101,11 @@ const applyBtn = document.getElementById('apply-btn').addEventListener('click', 
     else {
         alert('invalid cupon')
     }
-
-    // --------- update grand name and price -------------------------
-
-
-
-
-
 })
+
+
+
 // ----------cuppon code part end----------//
-
-
-
-
 const nextBtn = document.getElementById('next-btn');
 const phoneNumber = document.getElementById('phone-number').addEventListener('keyup', function (event) {
     const element = event.target.value;
@@ -130,9 +118,6 @@ const phoneNumber = document.getElementById('phone-number').addEventListener('ke
         nextBtn.classList.add('bg-green-200');
     }
 });
-
-
-
 
 
 
